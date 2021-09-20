@@ -1,0 +1,38 @@
+@import url('https://use.typekit.net/isp1luy.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply m-0 p-0 min-h-screen bg-gray-800 proxima-soft text-white;
+}
+
+#svelte {
+	@apply m-0 p-0 min-h-screen;
+}
+
+@layer utilities {
+	@variants responsive {
+		.proxima-soft {
+			font-family: proxima-soft, sans-serif;
+		}
+
+		.roboto {
+			font-family: roboto, sans-serif;
+		}
+
+		.text-shadow {
+			text-shadow: 0px 0px 4px black;
+		}
+		.text-shadow-md {
+			text-shadow: 2px 2px 8px black;
+		}
+		.text-shadow-lg {
+			text-shadow: 15px 15px 30px black;
+		}
+		.text-shadow-none {
+			text-shadow: none;
+		}
+	}
+}
