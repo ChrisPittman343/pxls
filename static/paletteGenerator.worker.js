@@ -1,9 +1,13 @@
 onmessage = ({ data: { pixels } }) => {
-	const colors = new Set();
+	const colors = {};
 	for (let i = 4; i < pixels.length; i += 4) {
-		colors.add(toHex(pixels.slice(i - 4, i)));
+		const hex = toHex(pixels.slice(i - 4, i));
+		colors[hex] = colors[hex] ? colors[hex] + 1 : 1;
 	}
-	postMessage(Array.from(colors));
+
+	// Most common to least common colors
+	const sorted = Object.keys(colors).sort((a, b) => colors[b] - colors[a]);
+	postMessage(sorted);
 };
 
 const toHex = (rgba) =>
