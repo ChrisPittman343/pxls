@@ -1,0 +1,21 @@
+{
+	"name": "wasm",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build-test": "npm run asbuild & npm run test",
+		"test": "node tests",
+		"asbuild:untouched": "asc assembly/index.ts --target debug",
+		"asbuild:optimized": "asc assembly/index.ts --target release",
+		"asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+	},
+	"author": "Chris Pittman",
+	"license": "ISC",
+	"dependencies": {
+		"@assemblyscript/loader": "^0.19.16"
+	},
+	"devDependencies": {
+		"assemblyscript": "^0.19.16"
+	}
+}
