@@ -9,7 +9,8 @@
 
 <div class="relative h-8 w-[96px] cursor-pointer group" on:click={() => onClick(color)}>
 	<div
-		class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-8 w-[96px] transition-transform group-hover:scale-125 group-hover:z-10"
+		class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-8 w-[96px] 
+				transition-transform duration-75 group-hover:scale-125 group-hover:z-10"
 		style={`background-color: ${color};`}
 	>
 		<div class="text-white text-shadow text-sm font-mono">

@@ -7,11 +7,11 @@
 		faCheck,
 		faTimes
 	} from '@fortawesome/free-solid-svg-icons';
-	import { fly } from 'svelte/transition';
-	import { notifications } from '$lib/stores/notificationsStore';
+	import { fly, fade } from 'svelte/transition';
+	import { notifications, removeNotification } from '$lib/stores/notificationsStore';
+	import { onMount } from 'svelte';
 
 	export let notification: Notification;
-	let className = notification.type;
 
 	const icon = {
 		success: faCheck,
@@ -19,21 +19,26 @@
 		error: faBomb
 	};
 
+	onMount(() => {
+		return setTimeout(() => {
+			removeNotification(notification);
+		}, 10 * 1000);
+	});
+
 	const close = () => {
-		notifications.update((val) => {
-			return val.filter((n) => n.time === notification.time);
-		});
+		removeNotification(notification);
 	};
 </script>
 
 <div
-	in:fly={{ duration: 250, y: 300 }}
-	class="relative flex items-center px-6 py-4 rounded-md border-2 z-50"
+	in:fly={{ duration: 350, y: 500 }}
+	out:fade={{ duration: 350 }}
+	class="relative flex items-center px-6 py-4 rounded-md border-2 z-50 pointer-events-auto"
 	class:success={notification.type === 'success'}
 	class:warning={notification.type === 'warning'}
 	class:error={notification.type === 'error'}
 >
-	<Fa class="pr-4 text-xl" icon={icon[notification.type]} />
+	<Fa class="pr-3 text-xl" icon={icon[notification.type]} />
 	<h1 class="font-bold tracking-wide">{notification.name}</h1>
 	<button
 		class="absolute top-1 right-1 transition-opacity opacity-50 hover:opacity-100"
