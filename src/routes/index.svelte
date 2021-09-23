@@ -6,6 +6,7 @@
 	import { colors } from '$lib/stores/colorsStore';
 	import { imgSrc } from '$lib/stores/imageStore';
 	import { onMount } from 'svelte';
+	import axios from 'axios';
 
 	let worker: Worker;
 	let canvas: HTMLCanvasElement;
@@ -36,6 +37,17 @@
 	};
 </script>
 
+<button
+	on:click={async (e) => {
+		axios
+			.post('http://localhost:8080/palette', { url: $imgSrc })
+			.then((res) => console.log(res.data))
+			.catch((err) => {
+				console.log(err);
+			});
+	}}
+	>Fetch from server
+</button>
 <div class="grid grid-cols-2 gap-x-20 max-w-7xl w-full">
 	<div class="flex flex-col items-center gap-y-4">
 		<div class="flex items-end gap-x-4">
