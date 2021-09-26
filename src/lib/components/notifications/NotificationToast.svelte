@@ -8,7 +8,7 @@
 		faTimes
 	} from '@fortawesome/free-solid-svg-icons';
 	import { fly, fade } from 'svelte/transition';
-	import { notifications, removeNotification } from '$lib/stores/notificationsStore';
+	import { removeNotification } from '$lib/stores/notificationsStore';
 	import { onMount } from 'svelte';
 
 	export let notification: Notification;
@@ -22,7 +22,7 @@
 	onMount(() => {
 		return setTimeout(() => {
 			removeNotification(notification);
-		}, 10 * 1000);
+		}, 3 * 1000);
 	});
 
 	const close = () => {
@@ -33,7 +33,7 @@
 <div
 	in:fly={{ duration: 350, y: 500 }}
 	out:fade={{ duration: 350 }}
-	class="relative flex items-center px-6 py-4 rounded-md border-2 z-50 pointer-events-auto"
+	class="relative flex items-center px-6 py-4 pr-8 rounded-md border-2 pointer-events-auto"
 	class:success={notification.type === 'success'}
 	class:warning={notification.type === 'warning'}
 	class:error={notification.type === 'error'}

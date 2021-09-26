@@ -1,16 +1,27 @@
 onmessage = ({ data: { pixels } }) => {
 	const colors = {};
 	for (let i = 4; i < pixels.length; i += 4) {
-		const hex = toHex(pixels.slice(i - 4, i));
+		const hex = rgbToHex(pixels.slice(i - 4, i));
 		colors[hex] = colors[hex] ? colors[hex] + 1 : 1;
+		if (colors.length > 80) {
+			postMessage({
+				colors: sorted,
+				error: {
+					name: 'Too many colors in image!',
+					type: 'error',
+					time: Date.now()
+				}
+			});
+			return;
+		}
 	}
 
 	// Most common to least common colors
 	const sorted = Object.keys(colors).sort((a, b) => colors[b] - colors[a]);
-	postMessage(sorted);
+	postMessage({ colors: sorted });
 };
 
-const toHex = (rgba) =>
+const rgbToHex = (rgba) =>
 	'#' + componentToHex(rgba[0]) + componentToHex(rgba[1]) + componentToHex(rgba[2]);
 
 const componentToHex = (c) => {

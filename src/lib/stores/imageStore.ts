@@ -11,3 +11,19 @@ import { writable, derived } from 'svelte/store';
 export const imgSrc = writable<string>(
 	'https://pbs.twimg.com/media/E_ptnm9XEAQ8huT?format=png&name=orig'
 );
+
+export const validSrc = derived(
+	imgSrc,
+	(url, setValid) => {
+		setValid(false);
+		fetch(url)
+			.then((res) => res.blob())
+			.then((data) => {
+				setValid(data.type === 'image/png');
+			})
+			.catch(() => {
+				return;
+			});
+	},
+	false
+);
