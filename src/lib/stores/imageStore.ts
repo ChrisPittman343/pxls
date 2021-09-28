@@ -18,12 +18,8 @@ export const validSrc = derived(
 		setValid(false);
 		fetch(url)
 			.then((res) => res.blob())
-			.then((data) => {
-				setValid(data.type === 'image/png');
-			})
-			.catch(() => {
-				return;
-			});
+			.then((data) => setValid(data.type === 'image/png' || data.type === 'image/jpeg'))
+			.catch();
 	},
 	false
 );
