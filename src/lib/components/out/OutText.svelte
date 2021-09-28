@@ -15,8 +15,14 @@
 <div
 	class="relative p-5 bg-black min-w-[500px] min-h-[200px] max-h-[500px] overflow-y-scroll rounded-lg font-mono"
 >
-	{#each lines as ln}
-		<div>{ln}</div>
+	{#each lines as ln, i}
+		<div class="relative pl-12">
+			{ln}
+
+			<div class="absolute left-0 top-0 opacity-20 w-4 text-right select-none">
+				{i + 1}
+			</div>
+		</div>
 	{/each}
 
 	<button

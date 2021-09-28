@@ -6,9 +6,9 @@
 
 <Tooltip tip={'Export'}>
 	<button
-		class="px-2 pl-3 py-2 rounded-md bg-gray-800 transition-colors hover:bg-gray-700 font-mono"
+		class="px-3 pl-4 py-3 rounded-md bg-gray-800 transition-colors hover:bg-gray-700 font-mono"
 		on:click
 	>
-		<Fa icon={faFileExport} />
+		<Fa icon={faFileExport} size="lg" />
 	</button>
 </Tooltip>
