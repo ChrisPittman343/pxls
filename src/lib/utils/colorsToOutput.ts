@@ -1,8 +1,9 @@
 import { colorFormat, colors, colorToTargetString } from '$lib/stores/colorsStore';
 import { customRule, outputFormat } from '$lib/stores/outStore';
 import type { OutputFormat } from '$lib/types';
-import { hex } from 'color-convert';
+import colorConvert from 'color-convert';
 import { get } from 'svelte/store';
+const { hex } = colorConvert;
 
 export const colorsToOutput = (outFormat?: OutputFormat): string[] => {
 	const cs = get(colors);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ColorFormat, COLOR_FORMATS } from '$lib/types';
+	import { COLOR_FORMATS, type ColorFormat } from '$lib/types';
 
 	import ColorFormatPill from './ColorFormatPill.svelte';
 

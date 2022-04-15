@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { outputFormat } from '$lib/stores/outStore';
-	import { faTimes } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa/src/fa.svelte';
 	import ColorFormatSelect from '../colorDisplay/ColorFormatSelect.svelte';
 	import CustomRuleInput from './CustomRuleInput.svelte';
 	import OutputFormatSelect from './OutputFormatSelect.svelte';
@@ -21,6 +19,6 @@
 		class="absolute top-3 right-3 transition-opacity opacity-50 hover:opacity-100"
 		on:click={exit}
 	>
-		<Fa icon={faTimes} size="lg" />
+		x
 	</button>
 </div>

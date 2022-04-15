@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { colorFormat } from '$lib/stores/colorsStore';
-	import type { FormatOption } from '$lib/types';
+	import type { ColorFormat } from '$lib/types';
 
-	export let format: FormatOption;
+	export let format: ColorFormat;
 	$: active = format === $colorFormat;
 </script>
 

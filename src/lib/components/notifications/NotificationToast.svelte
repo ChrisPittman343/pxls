@@ -1,23 +1,17 @@
 <script lang="ts">
 	import type { Notification } from '$lib/types';
-	import Fa from 'svelte-fa/src/fa.svelte';
-	import {
-		faBomb,
-		faExclamationTriangle,
-		faCheck,
-		faTimes
-	} from '@fortawesome/free-solid-svg-icons';
+
 	import { fly, fade } from 'svelte/transition';
 	import { removeNotification } from '$lib/stores/notificationsStore';
 	import { onMount } from 'svelte';
 
 	export let notification: Notification;
 
-	const icon = {
-		success: faCheck,
-		warning: faExclamationTriangle,
-		error: faBomb
-	};
+	// const icon = {
+	// 	success: faCheck,
+	// 	warning: faExclamationTriangle,
+	// 	error: faBomb
+	// };
 
 	onMount(() => {
 		return setTimeout(() => {
@@ -38,13 +32,12 @@
 	class:warning={notification.type === 'warning'}
 	class:error={notification.type === 'error'}
 >
-	<Fa class="pr-3 text-xl" icon={icon[notification.type]} />
 	<h1 class="font-bold tracking-wide">{notification.name}</h1>
 	<button
 		class="absolute top-1 right-1 transition-opacity opacity-50 hover:opacity-100"
 		on:click={close}
 	>
-		<Fa icon={faTimes} />
+		x
 	</button>
 </div>
 

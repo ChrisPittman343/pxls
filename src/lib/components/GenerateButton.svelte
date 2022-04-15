@@ -2,7 +2,6 @@
 	import { validSrc } from '$lib/stores/imageStore';
 </script>
 
-<!-- TODO: More error handling so the user can't just get rid of disabled in inspector and generate on bad data -->
 <button
 	disabled={!$validSrc}
 	class="px-4 py-2 tracking-wider h-min font-mono transition-colors bg-blue-500 hover:bg-blue-600 rounded-md

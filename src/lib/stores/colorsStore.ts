@@ -1,6 +1,8 @@
 import { writable, get } from 'svelte/store';
-import { hex } from 'color-convert';
+import colorConvert from 'color-convert';
 import type { ColorFormat } from '$lib/types';
+
+const { hex } = colorConvert;
 
 const format = (s: string, vals: any[]): string => {
 	for (let i = 0; i < vals.length; i++) s = s.replace(`{${i}}`, vals[i]);

@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { imgSrc } from '$lib/stores/imageStore';
-
-	const onSelect = (e) => {};
 </script>
 
 <label for="image url" class="w-full">
