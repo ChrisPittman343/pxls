@@ -10,14 +10,16 @@ const config = {
 		})
 	],
 	kit: {
+		prerender: {
+			default: true
+		},
+		// paths: {
+		// 	base: '/pxls'
+		// },
 		adapter: adapter({
 			pages: 'docs',
-			assets: 'docs',
-			fallback: null
-		}),
-		paths: {
-			base: dev ? '' : '/pxls'
-		}
+			assets: 'docs'
+		})
 	}
 };
 
