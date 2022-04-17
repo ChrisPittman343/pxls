@@ -2,89 +2,66 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.png" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content="" />
-		<title>pxls</title>
-		<link rel="stylesheet" href="./_app/assets/pages/__layout.svelte-95260f4f.css" />
-		<link rel="stylesheet" href="./_app/assets/pages/index.svelte-7fec14b1.css" />
-		<link rel="modulepreload" href="./_app/start-e8c31ac3.js" />
-		<link rel="modulepreload" href="./_app/chunks/index-404cc73d.js" />
-		<link rel="modulepreload" href="./_app/chunks/index-e9fe9ef8.js" />
-		<link rel="modulepreload" href="./_app/pages/__layout.svelte-757ee683.js" />
-		<link rel="modulepreload" href="./_app/chunks/index-581a5b00.js" />
-		<link rel="modulepreload" href="./_app/pages/index.svelte-7963983c.js" />
+		<meta http-equiv="content-security-policy" content=""><title>pxls - Palette Generator</title><meta name="description" content="A palette generator for pixel art." data-svelte="svelte-1490u9c">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-ed2bfc88.css">
+	<link rel="stylesheet" href="/_app/assets/pages/index.svelte-37aa1c6b.css">
+	<link rel="modulepreload" href="/_app/start-9ad917dd.js">
+	<link rel="modulepreload" href="/_app/chunks/index-b23c3c9b.js">
+	<link rel="modulepreload" href="/_app/chunks/index-1a80e670.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-fc842fa9.js">
+	<link rel="modulepreload" href="/_app/chunks/index-6d41f84d.js">
+	<link rel="modulepreload" href="/_app/pages/index.svelte-f4028a47.js">
 	</head>
 	<body>
 		<div id="svelte">
-			<div class="m-auto min-h-screen flex flex-col items-center">
-				<nav class="p-2 mb-5 bg-slate-800 flex justify-center w-full">
-					<a href="./"><img src="./logo.svg" alt="PXLS" class="w-20 h-auto" /></a>
-				</nav>
-				<main class="p-4 w-full max-w-7xl flex flex-col items-center">
-					<div class="flex flex-col items-center gap-y-4 min-h-screen w-4/5">
-						<div class="flex w-full items-end gap-x-4">
-							<label for="image url" class="w-full"
-								><span>Image URL / Add img from files:</span>
-								<input
-									name="image url"
-									spellcheck="false"
-									class="p-2 w-full bg-gray-800 transition-colors outline-none focus:bg-gray-700 text-center rounded-lg"
-									value="https://pbs.twimg.com/media/E_ptnm9XEAQ8huT?format=png&amp;name=orig"
-							/></label>
-							<button
-								disabled
-								class="px-4 py-2 tracking-wider h-min font-mono transition-colors bg-blue-500 hover:bg-blue-600 rounded-md disabled:grayscale disabled:cursor-not-allowed"
-							>
-								Generate
-							</button>
-						</div>
 
-						<div class="">
-							<img
-								class="max-h-[600px] max-w-full w-auto h-auto rounded-xl"
-								src="https://pbs.twimg.com/media/E_ptnm9XEAQ8huT?format=png&amp;name=orig"
-								alt=""
-							/>
-						</div>
-					</div>
-				</main>
-			</div>
-			<footer class="p-8 mt-6 relative">
-				<span class="absolute left-2 bottom-2"
-					>©
-					<a class="underline" target="_blank" href="https://github.com/ChrisPittman343"
-						>Chris Pittman</a
-					>
-					2022</span
-				>
-			</footer>
-			<div>
-				<div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-40 flex flex-col gap-y-2"></div>
-			</div>
 
-			<script type="module" data-hydrate="kx4no9">
-				import { start } from './_app/start-e8c31ac3.js';
-				start({
-					target: document.querySelector('[data-hydrate="kx4no9"]').parentNode,
-					paths: { base: '', assets: '' },
-					session: {},
-					route: true,
-					spa: false,
-					trailing_slash: 'never',
-					hydrate: {
-						status: 200,
-						error: null,
-						nodes: [
-							import('./_app/pages/__layout.svelte-757ee683.js'),
-							import('./_app/pages/index.svelte-7963983c.js')
-						],
-						params: {},
-						routeId: ''
-					}
-				});
-			</script>
-		</div>
+
+<div class="m-auto min-h-screen flex flex-col items-center"><nav class="p-2.5 mb-5 bg-slate-800 flex justify-center w-full relative"><a href="/"><img src="/logo.svg" alt="PXLS" class="w-20 h-auto"></a></nav>
+	<main class="p-4 w-full max-w-7xl flex flex-col items-center"><section id="image-input" class="flex flex-col items-center gap-y-4 mx-4 p-2 w-4/5 max-h-[90%]"><div class="flex flex-col justify-center items-center border-dashed gap-y-4 rounded border-4 bg-slate-300 w-full h-96 bg-transparent"><button class="bg-blue-500 rounded px-3 h-min py-1.5 text-white font-semibold flex gap-x-3 items-center transition-colors hover:bg-blue-600 min-w-fit">Upload URL from Clipboard
+				<svg version="1.1" class="fa-icon  svelte-1b2zbdf" width="16" height="16" role="presentation" viewBox="0 0 1792 1792">
+    <path id="path-0" d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zM1024 224v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zM1280 896h299l-299-299v299zM1792 1024v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path>
+      
+      
+  </svg></button>
+
+			<span class="opacity-50">or</span>
+
+			<button class="bg-blue-500 rounded px-3 h-min py-1.5 text-white font-semibold flex gap-x-3 items-center transition-colors hover:bg-blue-600 min-w-fit">Upload file
+				<svg version="1.1" class="fa-icon  svelte-1b2zbdf" width="14.857142857142858" height="16" role="presentation" viewBox="0 0 1664 1792">
+    <path id="path-0" d="M1611 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z"></path>
+      
+      
+  </svg>
+				<input type="file" name="" id="" class="sr-only"></button></div></section>
+<section id="palette-output" class="m-4 mt-16 py-16"><span class="text-xl opacity-50">Once you select an image, the palette will appear here.</span></section></main></div>
+<footer class="p-8 mt-6 relative"><span class="absolute left-2 bottom-2">© <a class="underline" target="_blank" href="https://github.com/ChrisPittman343">Chris Pittman</a> 2022</span></footer>
+<div><div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-40 flex flex-col gap-y-2"></div></div>
+
+
+		<script type="module" data-hydrate="1a2zh6q">
+		import { start } from "/_app/start-9ad917dd.js";
+		start({
+			target: document.querySelector('[data-hydrate="1a2zh6q"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-fc842fa9.js"),
+						import("/_app/pages/index.svelte-f4028a47.js")
+				],
+				params: {},
+				routeId: ""
+			}
+		});
+	</script></div>
 		<div id="portal"></div>
 	</body>
 </html>

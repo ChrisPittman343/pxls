@@ -2,9 +2,6 @@
 	import { fade } from 'svelte/transition';
 
 	export let tip: string;
-	/**
-	 * Whether or not the tooltip should display on a component
-	 */
 	export let disabled = false;
 	let hovered: boolean;
 </script>

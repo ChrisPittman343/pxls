@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { notifications } from '$lib/stores/notificationsStore';
-	import Portal from '../Portal.svelte';
+	import Portal from '$lib/components/popup/Portal.svelte';
 	import NotificationToast from './NotificationToast.svelte';
 </script>
 

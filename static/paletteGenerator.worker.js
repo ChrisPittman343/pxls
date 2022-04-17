@@ -3,11 +3,11 @@ onmessage = ({ data: { pixels } }) => {
 	for (let i = 4; i < pixels.length; i += 4) {
 		const hex = rgbToHex(pixels.slice(i - 4, i));
 		colors[hex] = colors[hex] ? colors[hex] + 1 : 1;
-		if (Object.keys(colors).length > 80) {
+		if (Object.keys(colors).length > 100) {
 			postMessage({
 				colors: Object.keys(colors),
 				error: {
-					name: 'Too many colors in image!',
+					name: 'Too many colors in image! (100+)',
 					type: 'error',
 					time: Date.now()
 				}

@@ -8,7 +8,7 @@
 
 <button
 	class:active
-	class="px-5 py-1 rounded-full bg-gray-800 transition-colors hover:bg-gray-700 font-mono text-sm tracking-wider"
+	class="px-5 py-1 rounded-full bg-white transition-colors hover:bg-gray-100 font-mono text-sm tracking-wider"
 	on:click={() => outputFormat.set(format)}
 >
 	{format.toUpperCase()}
@@ -16,6 +16,6 @@
 
 <style lang="postcss">
 	.active {
-		@apply !bg-white text-black;
+		@apply !bg-slate-200;
 	}
 </style>

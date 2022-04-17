@@ -4,6 +4,7 @@
 </script>
 
 <div class="flex items-center w-full gap-x-2">
+	<span class="font-semibold"> Output format: </span>
 	{#each OUTPUT_FORMATS as format}
 		<OutputFormatPill {format} />
 	{/each}

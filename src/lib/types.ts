@@ -6,7 +6,7 @@ export interface Notification {
 export type NotificationType = 'success' | 'warning' | 'error';
 
 export type ColorFormat = 'rgb' | 'hex' | 'hsv' | 'hsl';
-export const COLOR_FORMATS: ColorFormat[] = ['rgb', 'hex', 'hsv', 'hsl'];
+export const COLOR_FORMATS: ColorFormat[] = ['hex', 'rgb', 'hsv', 'hsl'];
 
-export type OutputFormat = 'CSS' | 'CSV' | 'PNG' | 'Custom';
-export const OUTPUT_FORMATS: OutputFormat[] = ['CSS', 'CSV', 'PNG', 'Custom'];
+export type OutputFormat = 'CSS' | 'CSV' | 'Custom';
+export const OUTPUT_FORMATS: OutputFormat[] = ['CSS', 'CSV', 'Custom'];

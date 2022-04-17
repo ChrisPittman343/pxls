@@ -16,8 +16,6 @@ export const colorsToOutput = (outFormat?: OutputFormat): string[] => {
 			return colorsToCSV(cs);
 		case 'Custom':
 			return colorsToCustom(cs, get(customRule));
-		case 'PNG':
-			return colorsToPNG(cs);
 	}
 };
 
@@ -70,8 +68,4 @@ const colorsToCSV = (colors: string[]): string[] => {
 		out.push(`${colorToTargetString(colors[i])},`);
 	}
 	return out;
-};
-
-const colorsToPNG = (colors: string[]): string[] => {
-	return colorsToCSS(colors);
 };

@@ -30,4 +30,9 @@ export const colorToTargetString = (c: string, targetFormat?: ColorFormat): stri
  * Array of colors in hex form (really easy to convert to all other formats)
  */
 export const colors = writable<string[]>([]);
+colors.subscribe((cols) => {
+	cols.sort((a, b) => {
+		return hex.hsv(b)[0] - hex.hsv(a)[0];
+	});
+});
 export const colorFormat = writable<ColorFormat>('hex');
