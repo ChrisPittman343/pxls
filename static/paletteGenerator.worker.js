@@ -1,13 +1,16 @@
 onmessage = ({ data: { pixels } }) => {
-	const colors = {};
+	const colors = new Map();
+
+	// Add all unique colors (rgba) to map. Error out if 300+ found
 	for (let i = 4; i < pixels.length; i += 4) {
-		const hex = rgbToHex(pixels.slice(i - 4, i));
-		colors[hex] = colors[hex] ? colors[hex] + 1 : 1;
-		if (Object.keys(colors).length > 100) {
+		const rgba = pixels.slice(i - 4, i);
+		if (!colors.has(rgba.join('-')))
+			colors.set(rgba.join('-'), [rgba, rgba.reduce((prev, curr) => prev + curr, 0)]);
+		if (colors.size >= 300) {
 			postMessage({
-				colors: Object.keys(colors),
+				colors: Array.from(colors.values()).map(([rgb]) => rgbToHex(rgb)),
 				error: {
-					name: 'Too many colors in image! (100+)',
+					name: 'Too many colors in image! (300+)',
 					type: 'error',
 					time: Date.now()
 				}
@@ -16,8 +19,24 @@ onmessage = ({ data: { pixels } }) => {
 		}
 	}
 
-	const sorted = Object.keys(colors);
-	postMessage({ colors: sorted });
+	// Combine similar colors (lossy image protection)
+	const minDistance = 10;
+	const minifiedColors = Array.from(colors.values())
+		.sort((a, b) => a[1] - b[1]) // Sort by rgba sum
+		// Remove similar colors
+		.filter((curr, i, arr) => {
+			if (i !== 0) {
+				const prev = arr[i - 1];
+				if (Math.abs(prev[1] - curr[1]) < minDistance * 3) {
+					// If every component in prev is too close to curr, remove curr
+					return !prev[0].every((component, k) => Math.abs(component - curr[0][k]) < minDistance);
+				}
+			}
+			return true;
+		});
+
+	// Return array of hex colors
+	postMessage({ colors: minifiedColors.map(([rgb]) => rgbToHex(rgb)) });
 };
 
 const rgbToHex = (rgba) =>
