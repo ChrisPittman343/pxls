@@ -65,7 +65,7 @@
 				bind:this={displayedImg}
 				src={$imgSrc}
 				alt="Chosen art"
-				class="aspect-auto h-full w-auto max-h-[600px] m-auto cursor-crosshair"
+				class="h-auto w-full aspect-auto m-auto cursor-crosshair"
 				style="image-rendering: pixelated; image-rendering: crisp-edges;"
 				on:mouseleave={() => {
 					screenHoverLocation.set(null);

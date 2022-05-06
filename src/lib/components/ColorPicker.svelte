@@ -48,12 +48,3 @@
 		</div>
 	{/if}
 </Portal>
-
-<!-- 
-	Esentially, the size of the canvas is the ACTUAAL size of the image.
-	However, the image is not necessarily that same size. There is a shrink factor.
-
-
- -->
-<style lang="postcss">
-</style>

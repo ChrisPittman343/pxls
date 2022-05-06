@@ -9,7 +9,7 @@
 	<title>pxls - Palette Generator</title>
 	<meta name="description" content="A palette generator for pixel art." />
 </svelte:head>
-<div class="m-auto min-h-screen flex flex-col items-center">
+<div class="m-auto flex flex-col items-center">
 	<Navbar />
 	<main class="p-4 w-full max-w-7xl flex flex-col items-center bg-cover bg-no-repeat bg-center">
 		<slot />
